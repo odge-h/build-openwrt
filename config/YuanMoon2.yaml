@@ -1,5 +1,3 @@
-# 主要改进：安全 DNS / 节点命名模糊化 / 规则源保护
-
 # 基础设置 (根据常见习惯补充，源文件未提供)
 port: 7890
 socks-port: 7891
@@ -788,10 +786,10 @@ rule-providers:
 
 # 规则匹配 (严格遵循源文件顺序)
 rules:
-  - RULE-SET,DirectList,🎯 全球直连
-  - RULE-SET,LocalAreaNetwork,🎯 全球直连
-  - RULE-SET,Speedtest,🎯 全球直连
-  - RULE-SET,UnBan,🎯 全球直连
+  - RULE-SET,DirectList,🎯 全球直连,no-resolve
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连,no-resolve
+  - RULE-SET,Speedtest,🎯 全球直连,no-resolve
+  - RULE-SET,UnBan,🎯 全球直连,no-resolve
   
   - RULE-SET,BanAD,🛑 广告拦截
   - RULE-SET,BanProgramAD,🍃 应用净化
@@ -826,14 +824,14 @@ rules:
   - RULE-SET,Bilibili,📺 哔哩哔哩
   - RULE-SET,ChinaMedia,🌏 国内媒体
   
-  - RULE-SET,GoogleCN,🎯 全球直连
-  - RULE-SET,ChinaIp,🎯 全球直连
-  - RULE-SET,ChinaDomain,🎯 全球直连
-  - RULE-SET,ChinaCompanyIp,🎯 全球直连
-  - RULE-SET,Download,🎯 全球直连
+  - RULE-SET,GoogleCN,🎯 全球直连,no-resolve
+  - RULE-SET,ChinaIp,🎯 全球直连,no-resolve
+  - RULE-SET,ChinaDomain,🎯 全球直连,no-resolve
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连,no-resolve
+  - RULE-SET,Download,🎯 全球直连,no-resolve
   
   # 特殊内联 GeoIP
   - GEOIP,CN,🎯 全球直连,no-resolve
   
   # 兜底规则
-  - MATCH,🐟 漏网之鱼
+  - MATCH,🐟 漏网之鱼 
